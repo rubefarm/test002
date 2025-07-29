@@ -1,0 +1,23 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: test002 
+  description: Secure Supply Chain Example for Chatbot Application   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:
+    # ArgoCD apps from this template used rhtap-gitops as the grouping
+    argocd/app-selector: rhtap/gitops=test002  
+    janus-idp.io/tekton: test002 
+    backstage.io/kubernetes-id: test002 
+    backstage.io/techdocs-ref: dir:. 
+    quay.io/repository-slug: skrzypekdotio/test002
+  tags: ["ai", "llamacpp", "vllm", "python"] 
+spec:
+  type: service
+  owner: user:default/shpwrck 
+  lifecycle: experimental
+ 
